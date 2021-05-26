@@ -30,6 +30,15 @@ public class Topico {
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
 
+	public Topico() {
+	}
+	
+	public Topico(String titulo, String mensage, Curso curso) {
+		this.titulo = titulo;
+		this.mensagem = mensage;
+		this.curso = curso;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

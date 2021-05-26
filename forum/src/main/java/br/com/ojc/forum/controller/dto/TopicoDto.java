@@ -1,4 +1,4 @@
-package br.com.ojc.forum.Controller.dto;
+package br.com.ojc.forum.controller.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
