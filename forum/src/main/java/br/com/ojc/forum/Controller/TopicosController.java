@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import br.com.ojc.forum.Controller.dto.TopicoDto;
 import br.com.ojc.forum.modelo.Curso;
 import br.com.ojc.forum.modelo.Topico;
 
@@ -15,9 +16,9 @@ public class TopicosController {
 
 	@RequestMapping("/topicos")
 	@ResponseBody
-	public List<Topico> lista(){
+	public List<TopicoDto> lista(){
 		Topico topico = new Topico("Dúvida", "Dúvida com Spring", new Curso("Spring", "Programação"));
 		
-		return Arrays.asList(topico, topico, topico);
+		return TopicoDto.converter(Arrays.asList(topico, topico, topico));
 	}
 }
