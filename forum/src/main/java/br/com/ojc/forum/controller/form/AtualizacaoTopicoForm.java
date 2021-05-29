@@ -1,5 +1,7 @@
 package br.com.ojc.forum.controller.form;
 
+import java.util.Optional;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -32,7 +34,8 @@ public class AtualizacaoTopicoForm {
 	}
 
 	public Topico atualizar(Long id, TopicoRepository topicoRepository) {
-		Topico topico = topicoRepository.getOne(id);
+		Optional<Topico> optional = topicoRepository.findById(id);
+		Topico topico = optional.get();
 		topico.setTitulo(this.titulo);
 		topico.setMensagem(this.mensagem);
 		return topico;
